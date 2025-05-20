@@ -1,9 +1,11 @@
 import React from 'react'
+import ArticleList from '../components.jsx/Articles.jsx/ArticleList'
 
 const Homepage = () => {
   return (
     <div>
-      homepage here
+    <h1>All Articles</h1>
+    <ArticleList/>
     </div>
   )
 }
