@@ -1,18 +1,20 @@
-import { useState } from 'react'
+import React from 'react'
+import Topics from './components.jsx/Topics'
+import Homepage from './Pages.jsx/Homepage'
+import ArticlePage from './Pages.jsx/ArticlePage'
+import UserPage from './Pages.jsx/UserPage'
 
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-  
-    </>
+    <div>
+    <Homepage/>
+    <Topics/>
+    <ArticlePage/>
+    <UserPage/>
+    </div>
   )
 }
 
 export default App
+
