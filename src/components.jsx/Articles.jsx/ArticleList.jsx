@@ -1,16 +1,20 @@
 import React, { useEffect, useState } from 'react'
 import { fetchArticles } from '../../utils/api';
-import './ArticleCard.css';
+import './ArticleCard.module.css';
+import { Link } from 'react-router-dom';
+import ArticleCard from './ArticleCard';
 
 
 const ArticleList = () => {
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
+
   fetchArticles()
     .then((res) => {
-      console.log(res.data.articles); 
+    
       setArticles(res.data.articles);
       setLoading(false);
     })
@@ -22,11 +26,16 @@ const ArticleList = () => {
 }, []);
 
   if (loading) return <p>Loading...</p>;
+  if (error) return <p className="error">{error}</p>;
 
   return (
     <ul>
       {articles.map((article) => (
-        <li key={article.article_id}>{article.title}</li>
+        <li key={article.article_id}>
+          <Link to={`/articles/${article.article_id}`}>
+          <ArticleCard article={article}/>
+          </Link>
+        </li>
       ))}
     </ul>
   );
