@@ -11,7 +11,8 @@ const CommentsList = () => {
     axios
       .get(`https://news-be-oks3.onrender.com/api/articles/${article_id}/comments`)
       .then((res) => {
-        setComments(res.data.comment);
+    setComments(res.data.comments)
+
         setLoading(false);
       });
   }, [article_id]);
