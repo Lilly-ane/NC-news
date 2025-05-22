@@ -1,4 +1,3 @@
-import React from 'react'
 import ArticleList from '../components/Articles/ArticleList';
 
 const Homepage = () => {

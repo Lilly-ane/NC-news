@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { fetchSingleArticle } from '../api/api';
+import { fetchSingleArticle } from "../api";
 import SingleArticleCard from '../components/Articles/ArticleCard';
 
 
