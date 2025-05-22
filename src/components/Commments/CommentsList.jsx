@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Topics = () => {
+const CommentsList = () => {
   return (
     <div>
-      topics here
+      
     </div>
   )
 }
 
-export default Topics
+export default CommentsList

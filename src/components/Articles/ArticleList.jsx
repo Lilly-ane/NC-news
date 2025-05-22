@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { fetchArticles } from '../../utils/api';
-import './ArticleCard.module.css';
+import { fetchArticles } from '../../api/api';
 import { Link } from 'react-router-dom';
 import ArticleCard from './ArticleCard';
 
@@ -11,10 +10,8 @@ const ArticleList = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-
   fetchArticles()
     .then((res) => {
-    
       setArticles(res.data.articles);
       setLoading(false);
     })

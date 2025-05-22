@@ -1,8 +1,7 @@
 import { useParams, Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { fetchSingleArticle } from '../utils/api';
-import ArticleCard from '../components.jsx/Articles.jsx/ArticleCard';
-import SingleArticleCard from '../components.jsx/Articles.jsx/SingleArticleCard';
+import { fetchSingleArticle } from '../api/api';
+import SingleArticleCard from '../components/Articles/ArticleCard';
 
 
 const ArticlePage = () => {
