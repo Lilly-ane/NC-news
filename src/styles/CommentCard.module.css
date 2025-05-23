@@ -1,20 +1,32 @@
-.comment-card {
-  background: #f9f9f9;
+.commentCard {
+  background: #f0f8ff;
   border: 1px solid #ccc;
-  border-radius: 8px;
-  margin-bottom: 1rem;
+  border-radius: 10px;
   padding: 1rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.2s ease;
 }
 
-.comment-author {
+.commentCard:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.commentAuthor {
   font-weight: bold;
+  color: #333;
+  margin-bottom: 0.3rem;
 }
 
-.comment-date {
+.commentBody {
+  color: #444;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.commentDate {
   font-size: 0.8rem;
-  color: #888;
-}
-
-.comment-body {
+  color: #777;
+  text-align: right;
   margin-top: 0.5rem;
 }

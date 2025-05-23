@@ -1,8 +1,10 @@
-import { useParams, Link } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import { fetchSingleArticle } from "../api";
-import SingleArticleCard from '../components/Articles/ArticleCard';
-import CommentsList from '../components/Commments/CommentsList';
+import { useParams, Link } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { fetchSingleArticle } from "../api"
+import CommentsList from '../components/Comments/CommentsList'
+import VoteButtons from '../components/VoteButtons';
+import ArticleCard from '../components/Articles/ArticleCard'
+
 
 
 const ArticlePage = () => {
@@ -17,7 +19,8 @@ const ArticlePage = () => {
 
   return (
     <section>
-    <SingleArticleCard article={article}/>
+    <ArticleCard article={article}/>
+    <VoteButtons articleId={article.article_id} initialVotes={article.votes} />
       <CommentsList />
       <Link to="/articles">← Back to all articles</Link>
     </section>

@@ -1,0 +1,36 @@
+.commentsContainer {
+  margin: 2rem auto;
+  max-width: 700px;
+  padding: 1rem;
+}
+
+.commentCard {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.commentCard:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.author {
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+  color: #333;
+}
+
+.body {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 0.5rem;
+}
+
+.date {
+  font-size: 0.8rem;
+  color: #999;
+  text-align: right;
+}

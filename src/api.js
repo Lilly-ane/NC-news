@@ -17,3 +17,12 @@ export const fetchSingleArticle = (article_id) => {
       console.error("Error fetching single article:", err);
     });
 }
+
+export const fetchCommentsByArticleId = (article_id) => {
+  return API.get(`/articles/${article_id}/comments`)
+    .then((res) => res.data.comment?.rows || [])
+    .catch((err) => {
+      console.error("Error fetching comments:", err);
+      throw err; 
+    });
+};
