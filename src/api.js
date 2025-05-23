@@ -26,3 +26,10 @@ export const fetchCommentsByArticleId = (article_id) => {
       throw err; 
     });
 };
+
+
+export const patchArticleVotes = (articleId, change) => {
+  return axios.patch(`/api/articles/${articleId}`, {
+    inc_votes: change
+  });
+};

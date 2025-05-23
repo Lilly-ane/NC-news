@@ -1,6 +1,8 @@
 import styles from '../../styles/ArticleCard.module.css';
 
 const ArticleCard = ({ article }) => {
+console.log("ARTICLE DATA:", JSON.stringify(article, null, 2));
+
   const { title, article_img_url, body, author, votes } = article;
 
   return (
@@ -13,5 +15,6 @@ const ArticleCard = ({ article }) => {
     </div>
   );
 };
+
 
 export default ArticleCard;

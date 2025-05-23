@@ -10,7 +10,7 @@ const VoteButtons = ({ initialVotes, onVote }) => {
     setError(null);
 
     onVote(change).catch(() => {
-      setLocalVotes((v) => v - change); // revert
+      setLocalVotes((v) => v - change); 
       setError("Vote failed. Please try again.");
     });
   };
