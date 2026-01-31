@@ -1,26 +1,32 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { fetchCommentsByArticleId } from '../../api';
-import CommentCard from './CommentCard'; // ajustează calea dacă e în alt folder
-import styles from '../../styles/CommentsList.module.css'; // dacă ai stiluri pentru container
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { fetchCommentsByArticleId } from "../../api";
+import CommentCard from "./CommentCard";
+import styles from "../../styles/CommentsList.module.css";
 
 const CommentsList = () => {
   const { article_id } = useParams();
-  const [comments, setComments] = useState([]);
+
+  const [comments, setComments] = useState([]); // mereu array
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    setLoading(true);
+    setError(null);
+
     fetchCommentsByArticleId(article_id)
       .then((data) => {
-        // dacă data vine ca { comment: [...] }
-        const formatted = Array.isArray(data.comment) ? data.comment : data;
-        setComments(formatted);
-        setLoading(false);
+        // data ar trebui să fie array, dar protejăm cazul când vine obiect
+        const list = Array.isArray(data) ? data : data?.comments ?? [];
+        setComments(list);
       })
       .catch((err) => {
         console.error(err);
-        setError('Could not fetch comments.');
+        setError("Could not fetch comments.");
+        setComments([]); // fallback sigur
+      })
+      .finally(() => {
         setLoading(false);
       });
   }, [article_id]);
@@ -31,6 +37,7 @@ const CommentsList = () => {
   return (
     <div className={styles.commentsContainer}>
       <h3 className={styles.title}>Comments</h3>
+
       {comments.length === 0 ? (
         <p>No comments yet.</p>
       ) : (
@@ -43,4 +50,3 @@ const CommentsList = () => {
 };
 
 export default CommentsList;
-

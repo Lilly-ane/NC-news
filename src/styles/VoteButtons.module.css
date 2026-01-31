@@ -1,0 +1,26 @@
+.wrap{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+}
+
+.count{
+  color: var(--muted2);
+  font-weight: 800;
+}
+
+.btn{
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  padding: 8px 10px;
+  border-radius: 12px;
+  cursor:pointer;
+  transition: all .2s ease;
+}
+
+.btn:hover{
+  border-color: var(--accent);
+  box-shadow: 0 0 18px rgba(14,182,212,0.18);
+  transform: translateY(-1px);
+}
